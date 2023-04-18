@@ -1,0 +1,213 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="shortcut icon"
+          href="../static/polls/img/List_Text_Menu_Numbers_String_Burger_icon-icons.com_67909.ico"
+          type="image/x-icon">
+</head>
+<header>
+    <div class="Logo">
+        <a href="/">
+            <img src="{% static 'polls/img/burger-icon.svg' %}" width="60" height="60px"/>
+        </a>
+
+    </div>
+    <nav>
+        <ul class="topmenu">
+            <li><a href="/" class="active">Главная</a>
+            </li>
+            <li><a href="">Компания<span class="fa fa-angle-down"></span></a>
+                <ul class="submenu">
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="">Продукты</a></li>
+                    <li><a href="">Награды</a></li>
+                </ul></li>
+            <li><a href="/interests">Интересы</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="Tel">
+        <a href="Tel:89127972734">+7 (912) 797 27 34</a>
+
+    </div>
+</header>
+<body class="content">
+{% block body %}
+{% endblock %}
+</body>
+<footer>
+    <div style="height: 100px;">
+    </div>
+</footer>
+</html>
+
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic);
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 15px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    nav {
+        background: #413F3C;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav ul:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    nav a {
+        text-decoration: none;
+        display: block;
+        transition: .3s linear;
+    }
+
+    .topmenu > li {
+        float: left;
+        position: relative;
+        border-left: 1px solid black;
+    }
+
+    .topmenu > li:first-child {
+        border-left: 0;
+    }
+
+    .topmenu > li > a {
+        padding: 20px 30px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #FEFDFD;
+        letter-spacing: 2px;
+    }
+
+    .topmenu > li > a.active,
+    .submenu a:hover {
+        color: #ddbe86;
+    }
+
+    .topmenu .fa,
+    .submenu .fa {
+        margin-left: 5px;
+        color: inherit;
+    }
+
+    .submenu {
+        position: absolute;
+        z-index: 5;
+        min-width: 200px;
+        background: white;
+        border-top: 1px solid #CBCBCC;
+        border-left: 1px solid #CBCBCC;
+        border-right: 1px solid #CBCBCC;
+        visibility: hidden;
+        opacity: 0;
+        transform-origin: 0% 0%;
+        transform: rotateX(-90deg);
+        transition: .3s linear;
+    }
+
+    .submenu li {
+        position: relative;
+    }
+
+    .submenu li a {
+        color: #282828;
+        padding: 10px 20px;
+        font-size: 13px;
+        border-bottom: 1px solid #CBCBCC;
+    }
+
+    .submenu .submenu {
+        position: absolute;
+        left: 100%;
+        top: -1px;
+        transition: .3s linear;
+    }
+
+    nav li:hover > .submenu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    body.content {
+        background-color: #ddbe86;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        background-color: #696969;
+        padding: 20px 50px;
+        align-items: center;
+    }
+
+    .Menu {
+        flex-grow: 1;
+    }
+
+    .Menu ul {
+        background: gray;
+        list-style: none;
+        width: 100%;
+    }
+
+    .Menu li {
+        float: left;
+        position: relative;
+        width: auto;
+    }
+
+    .Menu a {
+        background: #A9A9A9;
+        color: #FFFFFF;
+        display: flex;
+        font: bold 12px/20px sans-serif;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        -webkit-transition: all .25s ease;
+        -moz-transition: all .25s ease;
+        -ms-transition: all .25s ease;
+        -o-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+
+    .Menu li:hover a {
+        background: #000000;
+    }
+
+    .Tel {
+        font-family: monospace;
+        font-stretch: expanded;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .Tel a {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+</style>

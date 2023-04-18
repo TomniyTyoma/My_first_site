@@ -1,0 +1,27 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<div class="content">
+    {% if name %}
+    <h1>Привет</h1>
+    <h2>{{name}}</h2>
+    {% else %}
+    <h2>Ты кто?</h2>
+    {% endif %}
+    <div style="padding-top: 20px">
+        <a href="/?name=Anna">Анна</a>
+        <a href="/?name=Artyom">Артём</a>
+        <a href="/?name=Vadim">Вадим</a>
+        <a href="/?name=Alena">Алёна</a>
+    </div>
+    <div style="padding: 20px">
+        <h2>Тогда расскажи, кто ты ?</h2>
+        <form action="/" method="post">
+            {% csrf_token %}
+            <input type="text" name="name">
+            <button type="submit">это я</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
