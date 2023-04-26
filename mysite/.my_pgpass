@@ -1,0 +1,5 @@
+[my_service]
+host=localhost
+user=user
+dbname=dbname
+port=5432
